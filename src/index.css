@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Outfit', system-ui, sans-serif;
+    color-scheme: light;
+  }
+
+  body {
+    @apply antialiased text-charcoal bg-cream;
+  }
+
+  ::selection {
+    @apply bg-gold/20 text-charcoal;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-xl;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .btn-hover {
+    @apply hover:scale-[1.02] active:scale-[0.98] transition-all;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold/50;
+}
+
+/* Smooth Transitions */
+html {
+  scroll-behavior: smooth;
+}
